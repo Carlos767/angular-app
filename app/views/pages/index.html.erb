@@ -1,15 +1,24 @@
 <h1>Pathway to find a job:</h1>
 <div ng-app="app">
   <div ng-controller="stuffCtrl">
-    <p>{{ message}}</p>
+
+    <p>{{ message }}</p>
+
+     <input ng-model="message">
   
-
-
-    <input ng-model="message">
 
     <div id="tasks">
       <h3>Job hunting tasks:</h3>
-      <li ng-repeat="task in tasks">{{ task }}</li>
+      <div ng-repeat="task in tasks track by $index">
+        <span ng-click="competeTask($index)">
+        {{ task }} </span>
+        <input ng-model="task">
+      </div>
     </div>
+
+    <h3>Add a new task: </h3>
+    <p>{{ errorMessage }}</p>
+    <input ng-model="newTask">
+    <button ng-click="addTask(newTask)">Add Task</button>
   </div>
 </div>
