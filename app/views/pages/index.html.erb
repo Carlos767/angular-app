@@ -1,4 +1,15 @@
-<h1>Pages Index</h1>
+<h1>Pathway to find a job:</h1>
 <div ng-app="app">
-  {{ 1 + 1 }}
+  <div ng-controller="stuffCtrl">
+    <p>{{ message}}</p>
+  
+
+
+    <input ng-model="message">
+
+    <div id="tasks">
+      <h3>Job hunting tasks:</h3>
+      <li ng-repeat="task in tasks">{{ task }}</li>
+    </div>
+  </div>
 </div>
